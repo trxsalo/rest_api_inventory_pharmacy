@@ -1,10 +1,12 @@
+
 import dotenv from "dotenv";
-
-dotenv.config();
-
+import Indexrouter  from "./routers/index.routes";
+import Postrouter from "./routers/post.routes"
 import express, { Application } from "express";
 import morgan from "morgan";
 
+
+dotenv.config();
 export class App {
 
     private app: Application;
@@ -13,14 +15,22 @@ export class App {
         this.app = express(); 
         this.configuracion();
         this.middleware();
+        this.routes();
 
-    }
+    };
+
      configuracion(){
         this.app.set("port", this.port || process.env.PORT || 3000 );
-     }
+     };
+
      middleware(){
         this.app.use(morgan("dev"));
-     }
+     };
+    
+    routes(){
+        this.app.use(Indexrouter);
+        this.app.use(Postrouter);
+    }
 
     async liste(){
         await this.app.listen(this.app.get("port"));
