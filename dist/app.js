@@ -17,12 +17,16 @@ const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
 const express_1 = __importDefault(require("express"));
 class App {
-    constructor() {
+    constructor(port) {
+        this.port = port;
         this.app = (0, express_1.default)();
+    }
+    configuracion() {
+        this.app.set("port", this.port || process.env.PORT || 3000);
     }
     liste() {
         return __awaiter(this, void 0, void 0, function* () {
-            this.app.set("port", process.env.PORT || 3000);
+            this.app.set("port", this.port);
             yield this.app.listen(this.app.get("port"));
             console.log("Servidor en el puerto ", this.app.get("port"));
         });
