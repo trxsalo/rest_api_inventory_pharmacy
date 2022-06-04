@@ -29,7 +29,7 @@ export class App {
     
     routes(){
         this.app.use(Indexrouter);
-        this.app.use(Postrouter);
+        this.app.use("/posts", Postrouter);
     }
 
     async liste(){

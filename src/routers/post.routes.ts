@@ -2,7 +2,7 @@ import { Router } from "express";
 
 const router = Router();
 
-router.route("/post")
+router.route("/")
     .get((req,res)=> res.json("post"));
 
 
