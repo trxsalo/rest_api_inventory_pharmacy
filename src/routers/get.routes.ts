@@ -10,7 +10,8 @@ import {
     getIngreso,
     getLote,
     getMedicamento,
-    getRepresentante} from "../controllers/get.controllers"
+    getRepresentante,
+    getLaboratorio} from "../controllers/get.controllers"
 
 
 router.route("/getGrupo")
@@ -24,6 +25,9 @@ router.route("/getMedicameto")
 
 router.route("/getLote")
     .get(getLote);
+
+router.route("/getLaboratorio")
+    .get(getLaboratorio);
 
 router.route("/getEmpleado")
     .get(getEmpleado);

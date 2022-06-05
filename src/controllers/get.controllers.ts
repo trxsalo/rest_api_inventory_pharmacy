@@ -30,6 +30,12 @@ export async function getLote(req:Request, res:Response){
     res.json(lote[0]);
 }
 
+export async function getLaboratorio(req:Request, res:Response){
+    const conn = await connect();
+    const loboratorio = await conn.query("SELECT * FROM laboratorio");
+    res.json(loboratorio[0]);
+}
+
 //---//
 //---//
 
