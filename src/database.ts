@@ -2,7 +2,7 @@
 import { createPool } from "mysql2/promise";
 
 export async function connect (){
-    await createPool({
+    const conn = await createPool({
         host: "localhost",
         user: "root",
         password: "010819",
@@ -10,5 +10,5 @@ export async function connect (){
         connectionLimit: 10
     });
 
-    return connect;
+    return conn;
 }
