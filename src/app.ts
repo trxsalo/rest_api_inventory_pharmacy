@@ -1,7 +1,8 @@
 
 import dotenv from "dotenv";
 import Indexrouter  from "./routers/index.routes";
-import Getrouter from "./routers/get.routes"
+import Getrouter from "./routers/get.routes";
+import Postrouter from "./routers/post.routes";
 import express, { Application } from "express";
 import morgan from "morgan";
 
@@ -30,6 +31,7 @@ export class App {
     routes(){
         this.app.use(Indexrouter);
         this.app.use("/get", Getrouter);
+        this.app.use("/pot", Postrouter);
     }
 
     async liste(){
