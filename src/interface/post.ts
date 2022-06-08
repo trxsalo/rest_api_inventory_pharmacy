@@ -1,12 +1,12 @@
 export interface postLaboratorio {
-    idLaboratorio?:number,
+    //idLaboratorio?:number,
     nombre:string,
     telefonno:number,
     correo:string
 }
 
 export interface postLote {
-    idLotes?:number,
+    //idLotes?:number,
     cantidad:number,
     fechaVencimineto:Date,
     pkMedicamento:number,
@@ -15,7 +15,7 @@ export interface postLote {
 }
 
 export interface postMedicamento{
-    idMedicamneto:number,
+    //idMedicamneto:number,
     nombreComercial:string,
     nombreCientifico:string,
     pkPresentacion:number,
@@ -23,17 +23,17 @@ export interface postMedicamento{
 }
 
 export interface postPresentacion{
-    idPresentacion:number,
+    //idPresentacion:number,
     nombre:string
 }
 
 export interface postGrupoTerapeutico{
-    idGrupo:number,
+    //idGrupo:number,
     nombre:string
 }
 
 export interface postCargo{
-    idCargo:number,
+    //idCargo:number,
     nombre:string
 }
 

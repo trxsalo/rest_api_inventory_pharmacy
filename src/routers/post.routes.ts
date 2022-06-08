@@ -1,14 +1,18 @@
 import { Router } from "express";
 
+
 const router = Router();
 
-import {postCargos,postLaboratorios} from "../controllers/post.controllers"
+import {postCargos,postLaboratorios, postPresentacions} from "../controllers/post.controllers"
 
 router.route("/postLaboratorios")
-    .get(postLaboratorios);
+    .post(postLaboratorios);
 
-router.route("postCargos")
-    .get(postCargos)
+router.route("/postCargos")
+    .post(postCargos)
+
+router.route("/postPresentacion")
+    .post(postPresentacions)
 
 
 

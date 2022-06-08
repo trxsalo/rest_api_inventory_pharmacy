@@ -31,7 +31,7 @@ export class App {
     routes(){
         this.app.use(Indexrouter);
         this.app.use("/get", Getrouter);
-        this.app.use("/pot", Postrouter);
+        this.app.use("/post", Postrouter);
     }
 
     async liste(){
