@@ -35,13 +35,11 @@ export async function postCargos(req:Request,res:Response){
 }
 
 export async function postPresentacions(req:Request,res:Response) {
-    const {nombre}:postPresentacion = req.body;
-    const newPresentacion ={
-        nombre
-    }
+    const newPresentacion:postPresentacion = req.body;
     const conn = await connect();
     await conn.query("Insert into presentacion set ?", [newPresentacion]);
     res.json({
         mensage:"Se creo la nueva presentacion"
     })
 }
+
