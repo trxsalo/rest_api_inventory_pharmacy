@@ -35,7 +35,7 @@ export async function postCargos(req:Request,res:Response){
 }
 
 export async function postPresentacions(req:Request,res:Response) {
-    const {nombre}:postPresentacion = req.body();
+    const {nombre}:postPresentacion = req.body;
     const newPresentacion ={
         nombre
     }

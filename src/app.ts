@@ -26,6 +26,7 @@ export class App {
 
      middleware(){
         this.app.use(morgan("dev"));
+        this.app.use(express.json());
      };
     
     routes(){
@@ -38,6 +39,5 @@ export class App {
         await this.app.listen(this.app.get("port"));
         console.log("Servidor en el puerto " , this.app.get("port"));
     }
-
 
 }
