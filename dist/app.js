@@ -14,19 +14,37 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.App = void 0;
 const dotenv_1 = __importDefault(require("dotenv"));
-dotenv_1.default.config();
+const index_routes_1 = __importDefault(require("./routers/index.routes"));
+const get_routes_1 = __importDefault(require("./routers/get.routes"));
+const post_routes_1 = __importDefault(require("./routers/post.routes"));
 const express_1 = __importDefault(require("express"));
+const morgan_1 = __importDefault(require("morgan"));
+dotenv_1.default.config();
 class App {
     constructor(port) {
         this.port = port;
         this.app = (0, express_1.default)();
+        this.configuracion();
+        this.middleware();
+        this.routes();
     }
+    ;
     configuracion() {
         this.app.set("port", this.port || process.env.PORT || 3000);
     }
+    ;
+    middleware() {
+        this.app.use((0, morgan_1.default)("dev"));
+        this.app.use(express_1.default.json());
+    }
+    ;
+    routes() {
+        this.app.use(index_routes_1.default);
+        this.app.use("/get", get_routes_1.default);
+        this.app.use("/post", post_routes_1.default);
+    }
     liste() {
         return __awaiter(this, void 0, void 0, function* () {
-            this.app.set("port", this.port);
             yield this.app.listen(this.app.get("port"));
             console.log("Servidor en el puerto ", this.app.get("port"));
         });

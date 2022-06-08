@@ -4,7 +4,7 @@
   "description": "Rest API INVENTARIO",
   "main": "index.js",
   "scripts": {
-    "buil": "tcs ",
+    "buil": "tsc ",
     "dev": "nodemon src/index.ts  --exec ts-node"
   },
   "author": "trxsalo",
